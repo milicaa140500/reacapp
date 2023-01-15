@@ -1,7 +1,10 @@
 import "./App.css";
 import Laptops from "./komponente/Laptops";
 import NavMeni from "./komponente/NavMeni";
-import { useState } from "react";
+import {
+  useState,
+  useEffect,
+} from "react";
 import {
   BrowserRouter,
   Routes,
@@ -12,6 +15,26 @@ import Home from "./komponente/Home";
 import Contact from "./komponente/Contact";
 
 function App() {
+  const [input, setInput] =
+    useState("");
+  const [output, setOutput] = useState(
+    []
+  );
+  useEffect(() => {
+    setOutput([]);
+    products.filter((val) => {
+      if (
+        val.title
+          .toLowerCase()
+          .includes(input.toLowerCase())
+      ) {
+        setOutput((output) => [
+          ...output,
+          val,
+        ]);
+      }
+    });
+  }, [input]);
   const [cartNum, setCartNum] =
     useState(0);
   const [
@@ -78,7 +101,10 @@ function App() {
 
   return (
     <BrowserRouter className="App">
-      <NavMeni cartNum={cartNum} />
+      <NavMeni
+        cartNum={cartNum}
+        setInput={setInput}
+      />
       <Routes>
         <Route
           path="/"
@@ -94,6 +120,7 @@ function App() {
             <Laptops
               products={products}
               onAdd={addProduct}
+              output={output}
             />
           }
         />

@@ -3,7 +3,11 @@ import { BiLaptop } from "react-icons/bi";
 import { BsCart4 } from "react-icons/bs";
 import { Link } from "react-router-dom";
 
-const NavMeni = ({ cartNum }) => {
+const NavMeni = ({
+  cartNum,
+  setInput,
+  setSort,
+}) => {
   return (
     <nav
       className="navbar navbar-expand-lg navbar-light shadow stick-top"
@@ -12,7 +16,7 @@ const NavMeni = ({ cartNum }) => {
       }}
     >
       <div className="container-fluid">
-      <Link
+        <Link
           className="navbar-brand"
           style={{
             fontStyle: "italic",
@@ -20,7 +24,7 @@ const NavMeni = ({ cartNum }) => {
           to="/"
         >
           Laptop računari i oprema
-          </Link>
+        </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -38,24 +42,24 @@ const NavMeni = ({ cartNum }) => {
         >
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-            <Link
+              <Link
                 className="nav-link active"
                 aria-current="page"
                 to="/"
               >
                 Početna
-                </Link>
+              </Link>
             </li>
             <li className="nav-item">
-            <Link
+              <Link
                 className="nav-link"
                 to="/contact"
               >
-                   Kontakt
+                Kontakt
               </Link>
             </li>
             <li className="nav-item dropdown">
-            <Link
+              <Link
                 className="nav-link dropdown-toggle"
                 to="#"
                 id="navbarDropdown"
@@ -64,39 +68,39 @@ const NavMeni = ({ cartNum }) => {
                 aria-expanded="false"
               >
                 Proizvodi
-                </Link>
+              </Link>
               <ul
                 className="dropdown-menu"
                 aria-labelledby="navbarDropdown"
               >
                 <li>
-                <Link
+                  <Link
                     className="dropdown-item"
-                    href="#"
+                    to="/laptops"
                   >
                     <BiLaptop />
                     Laptopovi
-                    </Link>
+                  </Link>
                 </li>
               </ul>
             </li>
             <li className="nav-item">
-            <Link
+              <Link
                 className="nav-link"
-                href="#"
+                to="/cart"
               >
                 <BsCart4 />
-                </Link>
+              </Link>
             </li>
             <li className="nav-item">
-            <Link
+              <Link
                 className="nav-link"
                 to="#"
               >
                 <div className="num">
-                {cartNum}
+                  {cartNum}
                 </div>
-                </Link>
+              </Link>
             </li>
           </ul>
           <form className="d-flex">
@@ -105,6 +109,9 @@ const NavMeni = ({ cartNum }) => {
               type="search"
               placeholder="Search"
               aria-label="Search"
+              onChange={(e) =>
+                setInput(e.target.value)
+              }
             />
             <button
               className="btn btn-outline-success"
