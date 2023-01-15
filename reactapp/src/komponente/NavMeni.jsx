@@ -1,6 +1,7 @@
 import React from "react";
 import { BiLaptop } from "react-icons/bi";
 import { BsCart4 } from "react-icons/bs";
+import { Link } from "react-router-dom";
 
 const NavMeni = ({ cartNum }) => {
   return (
