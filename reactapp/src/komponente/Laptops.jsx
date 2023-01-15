@@ -1,13 +1,20 @@
 import React from "react";
 import OneLaptop from "./OneLaptop";
 
-const Laptops = () => {
+const Laptops = ({
+  products,
+  onAdd,
+}) => {
   return (
     <div className="okvir">
-      <OneLaptop />
-      <OneLaptop />
-      <OneLaptop />
-      <OneLaptop />
+  {products.map((prod) => (
+        <OneLaptop
+          product={prod}
+          key={prod.id}
+          onAdd={onAdd}
+          inCart={1}
+        />
+      ))}
     </div>
   );
 };

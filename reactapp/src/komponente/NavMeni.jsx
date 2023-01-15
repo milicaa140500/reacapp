@@ -1,9 +1,8 @@
 import React from "react";
 import { BiLaptop } from "react-icons/bi";
-import { MdHeadphones } from "react-icons/md";
 import { BsCart4 } from "react-icons/bs";
 
-const NavMeni = () => {
+const NavMeni = ({ cartNum }) => {
   return (
     <nav
       className="navbar navbar-expand-lg navbar-light shadow stick-top"
@@ -12,15 +11,15 @@ const NavMeni = () => {
       }}
     >
       <div className="container-fluid">
-        <a
+      <Link
           className="navbar-brand"
           style={{
             fontStyle: "italic",
           }}
-          href="#"
+          to="/"
         >
           Laptop računari i oprema
-        </a>
+          </Link>
         <button
           className="navbar-toggler"
           type="button"
@@ -38,83 +37,65 @@ const NavMeni = () => {
         >
           <ul className="navbar-nav me-auto mb-2 mb-lg-0">
             <li className="nav-item">
-              <a
+            <Link
                 className="nav-link active"
                 aria-current="page"
-                href="#"
+                to="/"
               >
                 Početna
-              </a>
+                </Link>
             </li>
             <li className="nav-item">
-              <a
+            <Link
                 className="nav-link"
-                href="#"
+                to="/contact"
               >
-                Login
-              </a>
+                   Kontakt
+              </Link>
             </li>
             <li className="nav-item dropdown">
-              <a
+            <Link
                 className="nav-link dropdown-toggle"
-                href="#"
+                to="#"
                 id="navbarDropdown"
                 role="button"
                 data-bs-toggle="dropdown"
                 aria-expanded="false"
               >
                 Proizvodi
-              </a>
+                </Link>
               <ul
                 className="dropdown-menu"
                 aria-labelledby="navbarDropdown"
               >
                 <li>
-                  <a
+                <Link
                     className="dropdown-item"
                     href="#"
                   >
                     <BiLaptop />
                     Laptopovi
-                  </a>
-                </li>
-                <li>
-                  <a
-                    className="dropdown-item"
-                    href="#"
-                  ></a>
-                </li>
-                <li>
-                  <hr className="dropdown-divider" />
-                </li>
-                <li>
-                  <a
-                    className="dropdown-item"
-                    href="#"
-                  >
-                    <MdHeadphones />
-                    Oprema
-                  </a>
+                    </Link>
                 </li>
               </ul>
             </li>
             <li className="nav-item">
-              <a
+            <Link
                 className="nav-link"
                 href="#"
               >
                 <BsCart4 />
-              </a>
+                </Link>
             </li>
             <li className="nav-item">
-              <a
+            <Link
                 className="nav-link"
-                href="#"
+                to="#"
               >
                 <div className="num">
-                  0
+                {cartNum}
                 </div>
-              </a>
+                </Link>
             </li>
           </ul>
           <form className="d-flex">
