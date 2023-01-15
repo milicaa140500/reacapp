@@ -1,5 +1,7 @@
 .okvir {
-  margin: 50px;
+  margin-top: 30px;
+  margin-left: 50px;
+  margin-right: 50px;
   display: flex;
 }
 
@@ -20,4 +22,45 @@
   padding-left: 3px;
   padding-right: 3px;
   margin-left: 2px;
+}
+
+.cart-h2 {
+  margin: 5px;
+  text-align: center;
+  font-style: italic;
+}
+
+.price {
+  padding: 1px;
+  margin-bottom: 2px;
+  color: #e6b3ff;
+  text-shadow: -1px 0 black, 0 1px black,
+    1px 0 black, 0 -1px black;
+  border-radius: 5%;
+  text-align: center;
+}
+
+.cart {
+  display: flex;
+  flex-direction: row;
+}
+
+.row.content {
+  height: 700px;
+}
+
+.sidenav {
+  padding-top: 20px;
+  background-color: #f1f1f1;
+  height: 100%;
+}
+
+@media screen and (max-width: 767px) {
+  .sidenav {
+    height: auto;
+    padding: 15px;
+  }
+  .row.content {
+    height: auto;
+  }
 }
