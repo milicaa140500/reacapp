@@ -45,7 +45,7 @@ const Laptops = ({
                   product={prod}
                   key={prod.id}
                   onAdd={onAdd}
-                  inCart={1}
+                  inCart={0}
                 />
               ))}
           </>
@@ -62,7 +62,7 @@ const Laptops = ({
                   product={prod}
                   key={prod.id}
                   onAdd={onAdd}
-                  inCart={1}
+                  inCart={0}
                 />
               ))}
           </>

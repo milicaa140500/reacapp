@@ -21,7 +21,7 @@ const OneLaptop = ({
         <h5 className="card-title">
           {product.title}
         </h5>
-        {inCart === 1 ? (
+        {inCart === 0 ? (
           <p className="card-text">
             {product.description}
           </p>
@@ -31,7 +31,7 @@ const OneLaptop = ({
         <div className="price">
           {product.price}
         </div>
-        {inCart === 1 ? (
+        {inCart === 0 ? (
           <a
             href="#"
             className="btn d-grid"

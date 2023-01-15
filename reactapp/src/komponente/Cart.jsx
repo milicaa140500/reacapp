@@ -11,7 +11,7 @@ const Cart = ({ products }) => {
           <OneLaptop
             product={prod}
             key={prod.id}
-            inCart={0}
+            inCart={1}
           />
         ))}
       </div>
