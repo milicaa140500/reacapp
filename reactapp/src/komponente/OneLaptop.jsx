@@ -7,7 +7,7 @@ const OneLaptop = ({
 }) => {
   return (
     <div
-      className="card"
+      className="col-12 col-sm-3 card"
       style={{
         width: "18rem",
       }}

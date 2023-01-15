@@ -31,7 +31,7 @@ const Laptops = ({
           </div>
         </div>
       </div>
-      <div className="okvir">
+      <div className="row okvir">
         {sort === true ? (
           <>
             {output
